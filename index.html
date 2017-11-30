@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
 
     <title>What's My IPZ?</title>
@@ -26,7 +27,9 @@
             margin: 0;
         }
 
-        html, body, #map {
+        html,
+        body,
+        #map {
             height: 100%;
         }
 
@@ -53,7 +56,7 @@
             background-position: center;
             position: relative;
             display: inline-block;
-            box-shadow: 0 1px 7px rgba(0,0,0,0.65);
+            box-shadow: 0 1px 7px rgba(0, 0, 0, 0.65);
             -webkit-border-radius: 4px;
             border-radius: 4px;
             width: 26px;
@@ -63,7 +66,7 @@
         .leaflet-touch .locator {
             background-size: 24px 24px;
             box-shadow: none;
-            border: 2px solid rgba(0,0,0,0.2);
+            border: 2px solid rgba(0, 0, 0, 0.2);
             background-clip: padding-box;
             width: 30px;
             height: 30px;
@@ -76,16 +79,16 @@
             background-position: center;
             position: relative;
             -webkit-transition: background-size 0.2s;
-            transition-timing-function: cubic-bezier(.05,1.2,.72,1.2);
+            transition-timing-function: cubic-bezier(.05, 1.2, .72, 1.2);
             display: inline-block;
             width: 100px;
             height: 100px;
             color: #fff;
         }
 
-            .my-custom-control:hover {
-                background-size: 100px;
-            }
+        .my-custom-control:hover {
+            background-size: 100px;
+        }
 
         .leaflet-top {
             z-index: 500;
@@ -94,7 +97,9 @@
         .leaflet-bottom {
             z-index: 499;
         }
+
         /*show a larger image when you're on a big screen*/
+
         @media screen and (min-width: 1200px) {
             .my-custom-control {
                 background-size: 150px 150px;
@@ -102,9 +107,9 @@
                 height: 200px;
             }
 
-                .my-custom-control:hover {
-                    background-size: 200px;
-                }
+            .my-custom-control:hover {
+                background-size: 200px;
+            }
         }
 
         .ipzarea {
@@ -113,6 +118,7 @@
         }
     </style>
 </head>
+
 <body>
     <div id="title">What's my IPZ (Ingestion Pathway Zone)?</div>
     <div id="map"></div>
@@ -186,12 +192,9 @@
             }
         }).addTo(map);
 
-        $.getJSON("/ipz.geojson", function(data)
-    {
-        states.addData(data);
-    });
-
-
+        $.getJSON("/ipz.geojson", function (data) {
+            states.addData(data);
+        });
 
         map.addControl(new MyControl());
         var geocoder = L.Control.geocoder().addTo(map);
@@ -230,3 +233,5 @@
         map.on('locationerror', onLocationError);
     </script>
 </body>
+
+</html>
