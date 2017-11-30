@@ -195,7 +195,7 @@
         $.getJSON("/ipz.geojson", function (data) {
             states.addData(data);
         });
-
+         
         map.addControl(new MyControl());
         var geocoder = L.Control.geocoder().addTo(map);
         map.addControl(new newControl());
