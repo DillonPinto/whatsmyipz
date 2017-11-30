@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="Control.Geocoder.css" />
 
     <script src="//cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
-    <script src="paz.geojson"></script>
+    <script src="ipz.geojson"></script>
     <script src='leaflet-pip.min.js'></script>
     <script src='https://code.jquery.com/jquery-1.11.0.min.js'></script>
     <script src="Control.Geocoder.js"></script>
@@ -166,7 +166,7 @@
                 map.showLabel(label);*/
             },
             style: function (feature) {
-                switch (feature.properties.NAME2_) {
+                switch (feature.properties.ID_) {
                     case 'IPZ_A': return { color: "#000000", fillColor: "#d6a090" };
                     case 'IPZ_B': return { color: "#000000", fillColor: "#fa2f7a" };
                     case 'IPZ_C': return { color: "#000000", fillColor: "#e61cf7" };
