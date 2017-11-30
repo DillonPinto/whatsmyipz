@@ -2,7 +2,7 @@
 <html>
 <head>
 
-    <title>What's My PAZ?</title>
+    <title>What's My IPZ?</title>
     <link rel="shortcut icon" href="https://dl.dropboxusercontent.com/u/345322813/logos/Div6Logo_PNG_16x16.png" type="image/x-icon">
     <link rel="icon" href="https://dl.dropboxusercontent.com/u/345322813/logos/Div6Logo_PNG_16x16.png" type="image/x-icon">
     <meta charset="utf-8" />
@@ -107,7 +107,7 @@
                 }
         }
 
-        .pazarea {
+        .ipzarea {
             position: absolute;
             font-size: 14px;
         }
@@ -150,14 +150,13 @@
                 return imageLink;
             }
         })
-
-        var states = L.geoJson(paz, {
+        var states = L.geoJson(null, {
             onEachFeature: function (feature, layer) {
                 console.log(feature);
                 var newMarker = new L.marker(layer.getBounds().getCenter(), { opacity: 0.01 });
                 newMarker.bindLabel(feature.properties.NAME1_, {
                     noHide: true,
-                    className: "pazarea",
+                    className: "ipzarea",
                     offset: [0, 0]
                 }).addTo(map);
                 /*var label = new L.Label();
@@ -186,6 +185,14 @@
                 }
             }
         }).addTo(map);
+
+        $.getJSON("/ipz.geojson", function(data)
+    {
+        states.addData(data);
+    });
+
+
+
         map.addControl(new MyControl());
         var geocoder = L.Control.geocoder().addTo(map);
         map.addControl(new newControl());
@@ -223,4 +230,3 @@
         map.on('locationerror', onLocationError);
     </script>
 </body>
-</html>
