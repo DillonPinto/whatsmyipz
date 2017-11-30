@@ -134,7 +134,7 @@
                 // create the control container with a particular class name
                 // ** you can add the image to the div as a background image using css
                 var imageLink = document.createElement('a');
-                imageLink.href = 'http://www.slocounty.ca.gov/OES.htm';
+                imageLink.href = 'https://www.slocounty.ca.gov/OES.htm';
                 var container = L.DomUtil.create('div', 'my-custom-control');
                 imageLink.appendChild(container);
                 // ... initialize other DOM elements, add listeners, etc.
@@ -200,7 +200,7 @@
         var geocoder = L.Control.geocoder().addTo(map);
         map.addControl(new newControl());
 
-        L.tileLayer('http://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.png?access_token={token}', {
+        L.tileLayer('https://{s}.tiles.mapbox.com/v4/{mapId}/{z}/{x}/{y}.png?access_token={token}', {
             subdomains: ['a', 'b', 'c', 'd'],
             mapId: 'slugis.bbd863d8',
             token: 'pk.eyJ1Ijoic2x1Z2lzIiwiYSI6IlB5TlZENVUifQ.Z597Ia0qffZlYcGpbJtzTA',
