@@ -191,7 +191,7 @@
             }
         }).addTo(map);
 
-        $.getJSON("/ipz.geojson", function (data) {
+        $.getJSON("data/ipz.geojson", function (data) {
             states.addData(data);
         });
          
@@ -232,4 +232,3 @@
         map.on('locationerror', onLocationError);
     </script>
 </body>
-</html>
