@@ -10,12 +10,12 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <link rel="stylesheet" href="//cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
+    <link rel="stylesheet" href="leaflet.css" />
     <link rel="stylesheet" href="leaflet.label.css" />
     <link rel="stylesheet" href="Control.Geocoder.css" />
 
-    <script src="//cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
-    <script src="ipz.geojson"></script>
+    <script src="leaflet.js"></script>
+    <script src="data/ipz.geojson"></script>
     <script src='leaflet-pip.min.js'></script>
     <script src='https://code.jquery.com/jquery-1.11.0.min.js'></script>
     <script src="Control.Geocoder.js"></script>
@@ -192,7 +192,7 @@
             }
         }).addTo(map);
 
-        $.getJSON("/ipz.geojson", function (data) {
+        $.getJSON("data/ipz.geojson", function (data) {
             states.addData(data);
         });
          
